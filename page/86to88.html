@@ -40,7 +40,7 @@
                 'send_at': new Date().valueOf()
             }, function (data) {
                 var msg1 = "Message received by server = " + JSON.stringify(data);
-                var msg2 = $('#m').val();
+                var msg2 = $('#m').val().toString();
                 //console.log(msg);
                 var element = document.createElement("div");
                 element.appendChild(document.createTextNode(msg2));
