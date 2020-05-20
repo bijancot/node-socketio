@@ -39,7 +39,8 @@
                 'conversation': $('#m').val(),
                 'send_at': new Date().valueOf()
             }, function (data) {
-                console.log("Message received by server = " + JSON.stringify(data));
+                var msg = "Message received by server = " + JSON.stringify(data);
+                console.log(msg);
             });
             $('#m').val('');
             return false;
