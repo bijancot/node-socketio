@@ -40,9 +40,9 @@
                 'send_at': new Date().valueOf()
             }, function (data) {
                 var msg = "Message received by server = " + JSON.stringify(data);
-                // console.log(msg);
+                console.log(msg);
                 var element = document.createElement("div");
-                element.appendChild(document.createTextNode(msg));
+                element.appendChild(document.createTextNode($('#m').val()));
                 document.getElementById('messages').appendChild(element);
             });
             $('#m').val('');
