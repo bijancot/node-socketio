@@ -28,6 +28,11 @@
 
         socket.on('someone send you message', function (data) {
             console.log("Someone Send You Message = " + JSON.stringify(data));
+            var obj = JSON.parse(data);
+
+            var element = document.createElement("div");
+            element.appendChild(document.createTextNode(obj.conversation));
+            document.getElementById('messages').appendChild(element);
         });
 
         $('form').submit(function (e) {
@@ -42,7 +47,7 @@
             }, function (data) {
                 var msg1 = "Message received by server = " + JSON.stringify(data);
                 // var msg2 = $("#m").val();
-                console.log(a);
+                console.log(msg1);
                 var element = document.createElement("div");
                 element.appendChild(document.createTextNode(a));
                 document.getElementById('messages').appendChild(element);
