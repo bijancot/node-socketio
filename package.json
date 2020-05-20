@@ -1,0 +1,41 @@
+{
+  "name": "lets-connect-node-server",
+  "version": "1.0.0",
+  "description": "Lets Connect Node Server",
+  "main": "lets-connect",
+  "scripts": {
+    "init-tsc": "tsc --init",
+    "build": "tsc",
+    "start-server": "tsc && pm2 start ecosystem.config.js",
+    "start-observer": "tsc && node build/main.js"
+  },
+  "keywords": [
+    "Lets",
+    "Connect",
+    "Node",
+    "Server"
+  ],
+  "git-repository": "",
+  "author": "irfanalfiansyah10@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.3",
+    "@types/node-cache": "^4.2.5",
+    "@types/socket.io": "^2.1.4",
+    "@types/winston": "^2.4.4",
+    "axios": "^0.19.2",
+    "class-transformer": "^0.2.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-cache": "^5.1.0",
+    "reflect-metadata": "^0.1.13",
+    "secure-conf": "0.0.4",
+    "socket.io": "^2.3.0",
+    "typescript": "^3.8.3",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
+  }
+}
