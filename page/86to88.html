@@ -39,10 +39,11 @@
                 'conversation': $('#m').val(),
                 'send_at': new Date().valueOf()
             }, function (data) {
-                var msg = "Message received by server = " + JSON.stringify(data);
+                var msg1 = "Message received by server = " + JSON.stringify(data);
+                var msg2 = $('#m').val();
                 console.log(msg);
                 var element = document.createElement("div");
-                element.appendChild(document.createTextNode($('#m').val()));
+                element.appendChild(document.createTextNode(msg2));
                 document.getElementById('messages').appendChild(element);
             });
             $('#m').val('');
