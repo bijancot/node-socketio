@@ -29,7 +29,7 @@
         socket.on('someone send you message', function (data) {
             console.log("Someone Send You Message = " + JSON.stringify(data));
             var obj = JSON.parse(data);
-
+            console.log(obj.conversation);
             var element = document.createElement("div");
             element.appendChild(document.createTextNode(obj.conversation));
             document.getElementById('messages').appendChild(element);
