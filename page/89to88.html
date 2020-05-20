@@ -31,19 +31,20 @@
         });
 
         $('form').submit(function (e) {
+            var a = $('#m').val();
             e.preventDefault(); // prevents page reloading
-            socket.emit('i\'m sending message', {
+            socket.emit('i\'m sending message', {           
                 'conversation_id': '_' + Math.random().toString(36).substr(2, 9),
                 'sender_id': 89,
                 'target_id': 88,
-                'conversation': $('#m').val(),
+                'conversation': a,
                 'send_at': new Date().valueOf()
             }, function (data) {
                 var msg1 = "Message received by server = " + JSON.stringify(data);
-                var msg2 = $("#m").val();
-                console.log(msg2);
+                // var msg2 = $("#m").val();
+                console.log(a);
                 var element = document.createElement("div");
-                element.appendChild(document.createTextNode(msg2.toString()));
+                element.appendChild(document.createTextNode(a));
                 document.getElementById('messages').appendChild(element);
             });
             $('#m').val('');
