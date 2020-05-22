@@ -3,12 +3,24 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
+    var sender_id = 86;
+    var target_id = 88;
+
+    $.getJSON('http://chat.letsconnectproject.com/api/chat/conversation/old/'+sender_id+'/'+target_id, function(data) {
+        
+        var text = `text: ${data.conversation}<br>
+                    Time: ${data.toto}<br>`
+                    
+        
+        $("#messages").html(text);
+    });
+
     $(function () {
         const socket = io({
             transportOptions: {
                 polling: {
                     extraHeaders: {
-                        'x-lets-connect-id-user': 86
+                        'x-lets-connect-id-user': sender_id
                     }
                 }
             }
@@ -40,8 +52,8 @@
             e.preventDefault(); // prevents page reloading
             socket.emit('i\'m sending message', {
                 'conversation_id': '_' + Math.random().toString(36).substr(2, 9),
-                'sender_id': 86,
-                'target_id': 88,
+                'sender_id': sender_id,
+                'target_id': target_id,
                 'conversation': $('#m').val(),
                 'send_at': new Date().valueOf()
             }, function (data) {
