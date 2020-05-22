@@ -5,14 +5,17 @@
 <script>
     var sender_id = 86;
     var target_id = 88;
+    
+    var url = 'http://chat.letsconnectproject.com/api/chat/conversation/old'+sender_id+'/'+target_id;
 
-    $.getJSON('http://chat.letsconnectproject.com/api/chat/conversation/old/'+sender_id+'/'+target_id, function(data) {
+    $.getJSON(url, function(data) {
         
         var text = `text: ${data.conversation}<br>
                     Time: ${data.toto}<br>`
                     
         
-        $("#messages").html(text);
+        // $("#messages").html(text);
+        console.log(text);
     });
 
     $(function () {
