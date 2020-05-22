@@ -16,8 +16,8 @@
 
     $.getJSON(url, function(data) {
         
-        var text = `text: ${data.conversation}<br>
-                    Time: ${data.toto}<br>`
+        var text = `text: ${data.data.conversation}<br>
+                    Time: ${data.data.toto}<br>`
                     
         
         // $("#messages").html(text);
